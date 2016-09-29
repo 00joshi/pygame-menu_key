@@ -78,7 +78,7 @@ class Menu(object):
         selection_rect = self.fields[self.selection_position].zaznaczenie_rect
         pygame.draw.rect(menu, self.selection_color, selection_rect)
 
-        for i in xrange(self.fields_quantity):
+        for i in range(self.fields_quantity):
             menu.blit(self.fields[i].pole, self.fields[i].pole_rect)
         self.dest_surface.blit(menu, self.paste_position)
         return self.selection_position
@@ -86,7 +86,7 @@ class Menu(object):
     def create_structure(self):
         self.menu_height = 0
         self.font = pygame.font.Font(self.font_path, self.font_size)
-        for i in xrange(self.fields_quantity):
+        for i in range(self.fields_quantity):
             self.fields.append(self.Pole())
             self.fields[i].tekst = self.legacy_list[i]
             self.fields[i].pole = self.font.render(
